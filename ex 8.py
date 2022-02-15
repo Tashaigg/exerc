@@ -1,4 +1,4 @@
-lista = 'W3resource Python Exercises.'
+lista = 'The colors in my ......studyroom are blue, green, and yellow.'
 novalista = ""
 separadores = ""
 final = []
@@ -9,18 +9,26 @@ for i in range(len(lista)):
    # print(lista[i])
     cart = lista[i]
     if cart.isalnum() == True:
-        sepa.append(separadores)
+        if separadores != "":
+            sepa.append(separadores)
         separadores = ""
         novalista = str(novalista) + str(cart)
     else:
-        final.append(novalista)
+        if novalista != "":
+            final.append(novalista)
         novalista = ""
         separadores = str(separadores) + str(cart)
 
+if lista[len(lista)-1].isalnum() == True:
+    if novalista != "":
+            final.append(novalista)
+else:
+    if separadores != "":
+            sepa.append(separadores)
 
 
-
-
-
+#print(separadores)
+#print(novalista)
+#print(len(lista))
 print(final)
 print(sepa)
